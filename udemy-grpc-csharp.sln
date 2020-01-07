@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "proto", "proto", "{6A3E668F-0A61-4FF2-91B5-C46B91EEF791}"
 	ProjectSection(SolutionItems) = preProject
 		dummy.proto = dummy.proto
+		greeting.proto = greeting.proto
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{E32E8F3F-0DDF-4368-AA1E-B2BB1E3DA2E2}"

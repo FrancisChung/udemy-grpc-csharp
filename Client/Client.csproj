@@ -73,6 +73,8 @@
   <ItemGroup>
     <Compile Include="Models\Dummy.cs" />
     <Compile Include="Models\DummyGrpc.cs" />
+    <Compile Include="Models\Greeting.cs" />
+    <Compile Include="Models\GreetingGrpc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
