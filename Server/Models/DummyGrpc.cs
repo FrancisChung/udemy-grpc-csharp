@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace Dummy { 
+namespace Dummy {
   public static partial class DummyService
   {
     static readonly string __ServiceName = "dummy.DummyService";

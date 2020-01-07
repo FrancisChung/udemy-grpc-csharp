@@ -71,6 +71,8 @@
     <Protobuf Include="../*.proto" OutputDir="%(RelativePath)Models/" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Dummy.cs" />
+    <Compile Include="Models\DummyGrpc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,9 +80,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
