@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumAPIServer", "SumAPIServe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServerStreaming", "ServerStreaming", "{1F4726BB-FA58-4CE9-A11C-16ACEB5B00D7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientStreaming", "ClientStreaming", "{CE9A8E01-93DD-4D12-9FCF-A8972D86A9A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
