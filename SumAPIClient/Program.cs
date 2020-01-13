@@ -20,13 +20,13 @@ namespace SumAPIClient
                 Channel channel = new Channel($"localhost:{_port}", ChannelCredentials.Insecure);
                 channel.ConnectAsync().ContinueWith((task) =>
                 {
-                //var taskResult = (task.Status == Tasks.TaskStatus.RanToCompletion ?
-                //                                "Client Ran Successfully" :
-                //                                $"TaskStatus : {task.ToString()}");
-                //Console.ReadKey();
-                //Console.WriteLine(taskResult);
+                    //var taskResult = (task.Status == Tasks.TaskStatus.RanToCompletion ?
+                    //                                "Client Ran Successfully" :
+                    //                                $"TaskStatus : {task.ToString()}");
+                    //Console.ReadKey();
+                    //Console.WriteLine(taskResult);
 
-                if (task.Status == Tasks.TaskStatus.RanToCompletion)
+                    if (task.Status == Tasks.TaskStatus.RanToCompletion)
                         Console.WriteLine("The Client connected successfully");
                     else
                         Console.WriteLine($"Client Task Status: {task.ToString()}");
@@ -50,6 +50,7 @@ namespace SumAPIClient
                 Console.ReadKey();
             }
             catch (IOException ex)
+            { }
         }
     }
 }
