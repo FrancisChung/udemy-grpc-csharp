@@ -50,7 +50,9 @@ namespace SumAPIClient
                 Console.ReadKey();
             }
             catch (IOException ex)
-            { }
+            {
+                Console.WriteLine($"Error : {ex.Message}");
+            }
         }
     }
 }
