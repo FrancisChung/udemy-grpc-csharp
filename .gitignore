@@ -338,3 +338,7 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/SumAPIServer/Models/PrimeGrpc.cs
+/SumAPIServer/Models/Prime.cs
+/ServerStreamServer/Models/PrimeGrpc.cs
+/ServerStreamServer/Models/Prime.cs
