@@ -1,5 +1,7 @@
 ﻿using System;
 using Grpc.Core;
+using PrimeAPI;
+
 namespace PrimeServer
 {
     class Program
@@ -9,9 +11,13 @@ namespace PrimeServer
         {
             var server = new Grpc.Core.Server()
             {
-                Ports = new ServerPort("localhost",_port, ServerCredentials.Insecure),
-                Services = { new  }
-            }
+                Ports = { new ServerPort("localhost", _port, ServerCredentials.Insecure) },
+                Services = { PrimeService.BindService(new PrimeServiceImpl()) }
+            };
+
+            server.Start();
+            Console.WriteLine($"Server Started");
+            Console.ReadKey();
         }
     }
 }
