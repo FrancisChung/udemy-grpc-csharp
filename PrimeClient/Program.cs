@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using Grpc.Core;
 
 namespace PrimeClient
 {
@@ -6,7 +8,10 @@ namespace PrimeClient
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var target = "localhost:50054"
+            Thread.Sleep(1000);
+
+            var channel = new Channel()
         }
     }
 }

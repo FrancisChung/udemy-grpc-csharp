@@ -25,6 +25,8 @@
     <Compile Remove="Models\DummyGrpc.cs" />
     <Compile Remove="Models\Greeting.cs" />
     <Compile Remove="Models\GreetingGrpc.cs" />
+    <Compile Remove="Models\Sumapi.cs" />
+    <Compile Remove="Models\SumapiGrpc.cs" />
   </ItemGroup>
 
 </Project>
