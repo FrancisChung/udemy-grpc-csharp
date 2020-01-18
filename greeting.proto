@@ -40,4 +40,4 @@ service GreetingService {
 
 	//Client streaming
 	rpc LongGreet (stream LongGreetingRequest) returns (LongGreetingResponse) {}
-}
+}	
