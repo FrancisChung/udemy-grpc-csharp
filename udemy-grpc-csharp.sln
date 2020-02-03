@@ -5,6 +5,7 @@ VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "proto", "proto", "{6A3E668F-0A61-4FF2-91B5-C46B91EEF791}"
 	ProjectSection(SolutionItems) = preProject
+		average.proto = average.proto
 		dummy.proto = dummy.proto
 		greeting.proto = greeting.proto
 		prime.proto = prime.proto
@@ -47,9 +48,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Classes", "Classes", "{2640
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComputeAverage", "ComputeAverage", "{6B65889D-AA9E-4031-A867-33961F0F355E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientStreamClient", "ClientStreamClient\ClientStreamClient.csproj", "{E9FFA457-5518-424B-9350-9C6029C311D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientStreamClient", "ClientStreamClient\ClientStreamClient.csproj", "{E9FFA457-5518-424B-9350-9C6029C311D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientStreamServer", "ClientStreamServer\ClientStreamServer.csproj", "{255BA9CD-9248-4938-9E4C-BD0E1563FE36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientStreamServer", "ClientStreamServer\ClientStreamServer.csproj", "{255BA9CD-9248-4938-9E4C-BD0E1563FE36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvgServer", "AvgServer\AvgServer.csproj", "{C1A7955E-F245-47DF-BD39-C1788A90A510}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +100,10 @@ Global
 		{255BA9CD-9248-4938-9E4C-BD0E1563FE36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{255BA9CD-9248-4938-9E4C-BD0E1563FE36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{255BA9CD-9248-4938-9E4C-BD0E1563FE36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A7955E-F245-47DF-BD39-C1788A90A510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A7955E-F245-47DF-BD39-C1788A90A510}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A7955E-F245-47DF-BD39-C1788A90A510}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A7955E-F245-47DF-BD39-C1788A90A510}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +125,7 @@ Global
 		{6B65889D-AA9E-4031-A867-33961F0F355E} = {CE9A8E01-93DD-4D12-9FCF-A8972D86A9A7}
 		{E9FFA457-5518-424B-9350-9C6029C311D4} = {26404047-C1B8-44CF-85F0-BB7E8674B1DD}
 		{255BA9CD-9248-4938-9E4C-BD0E1563FE36} = {26404047-C1B8-44CF-85F0-BB7E8674B1DD}
+		{C1A7955E-F245-47DF-BD39-C1788A90A510} = {6B65889D-AA9E-4031-A867-33961F0F355E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {41D906A8-0DC0-483B-A111-D8EB739B359D}

@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.11.2" />
+    <PackageReference Include="Grpc" Version="2.26.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.26.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Protobuf Include="../*.proto" OutputDir="%(RelativePath)Models/" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Models\Greeting.cs" />
+    <Compile Remove="Models\GreetingGrpc.cs" />
+    <Compile Remove="Models\Dummy.cs" />
+    <Compile Remove="Models\DummyGrpc.cs" />
+    <Compile Remove="Models\Sumapi.cs" />
+    <Compile Remove="Models\SumapiGrpc.cs" />
+    <Compile Remove="Models\Prime.cs" />
+    <Compile Remove="Models\PrimeGrpc.cs" />
+  </ItemGroup>
+
+</Project>
