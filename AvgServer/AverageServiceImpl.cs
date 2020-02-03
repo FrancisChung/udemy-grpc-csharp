@@ -22,7 +22,7 @@ namespace AvgServer
             }
 
             return new AverageResponse() {
-                Average = (sum / count)
+                Average = (double)sum / (double)count
             };
         }
     }
