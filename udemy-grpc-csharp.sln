@@ -54,6 +54,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientStreamServer", "Clien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvgServer", "AvgServer\AvgServer.csproj", "{C1A7955E-F245-47DF-BD39-C1788A90A510}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvgClient", "AvgClient\AvgClient.csproj", "{B1C36BE4-BF7B-4AA2-8747-C288D2BE6B52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +106,10 @@ Global
 		{C1A7955E-F245-47DF-BD39-C1788A90A510}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1A7955E-F245-47DF-BD39-C1788A90A510}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1A7955E-F245-47DF-BD39-C1788A90A510}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1C36BE4-BF7B-4AA2-8747-C288D2BE6B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1C36BE4-BF7B-4AA2-8747-C288D2BE6B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1C36BE4-BF7B-4AA2-8747-C288D2BE6B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1C36BE4-BF7B-4AA2-8747-C288D2BE6B52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -126,6 +132,7 @@ Global
 		{E9FFA457-5518-424B-9350-9C6029C311D4} = {26404047-C1B8-44CF-85F0-BB7E8674B1DD}
 		{255BA9CD-9248-4938-9E4C-BD0E1563FE36} = {26404047-C1B8-44CF-85F0-BB7E8674B1DD}
 		{C1A7955E-F245-47DF-BD39-C1788A90A510} = {6B65889D-AA9E-4031-A867-33961F0F355E}
+		{B1C36BE4-BF7B-4AA2-8747-C288D2BE6B52} = {6B65889D-AA9E-4031-A867-33961F0F355E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {41D906A8-0DC0-483B-A111-D8EB739B359D}
