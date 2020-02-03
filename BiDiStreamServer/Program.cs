@@ -10,7 +10,7 @@ namespace BiDiStreamServer
     {
         static void Main(string[] args)
         {
-            const int _port = 50055;
+            const int _port = 50056;
 
             Grpc.Core.Server server = null;
             try
