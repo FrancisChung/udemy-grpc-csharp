@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "proto", "proto", "{6A3E668F
 		dummy.proto = dummy.proto
 		greeting.proto = greeting.proto
 		prime.proto = prime.proto
+		sqrt.proto = sqrt.proto
 		sumapi.proto = sumapi.proto
 	EndProjectSection
 EndProject
@@ -58,9 +59,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvgClient", "AvgClient\AvgC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Classes", "Classes", "{98768940-29C7-4F4B-B5EF-985F6E576B93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiDiStreamServer", "BiDiStreamServer\BiDiStreamServer.csproj", "{F8348D5F-6778-47AE-8DE0-D677E5DE67A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiDiStreamServer", "BiDiStreamServer\BiDiStreamServer.csproj", "{F8348D5F-6778-47AE-8DE0-D677E5DE67A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiDiStreamClient", "BiDiStreamClient\BiDiStreamClient.csproj", "{3540A276-4B25-4ADD-B4CE-9790FDAE1A24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiDiStreamClient", "BiDiStreamClient\BiDiStreamClient.csproj", "{3540A276-4B25-4ADD-B4CE-9790FDAE1A24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
