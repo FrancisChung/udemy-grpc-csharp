@@ -22,7 +22,7 @@ namespace SqrtClient
 
             var client = new SqrtServiceClient(channel);
 
-            int number = 16;
+            int number = -1;
             var request = new Sqrt.SqrtRequest() { Number = number };
             Console.WriteLine($"Sending Sqrt of {request.Number} to Server");
 
