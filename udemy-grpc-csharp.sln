@@ -65,9 +65,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiDiStreamClient", "BiDiStr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ErrorHandling", "ErrorHandling", "{BF4605ED-286E-416B-8B93-2092773160ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqrtClient", "SqrtClient\SqrtClient.csproj", "{579A69EC-F498-49DB-BCFD-35FC0D1CA517}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqrtClient", "SqrtClient\SqrtClient.csproj", "{579A69EC-F498-49DB-BCFD-35FC0D1CA517}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqrtServer", "SqrtServer\SqrtServer.csproj", "{E3B7FEA4-D721-4CF9-8BC7-902DDACD1CF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqrtServer", "SqrtServer\SqrtServer.csproj", "{E3B7FEA4-D721-4CF9-8BC7-902DDACD1CF5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deadlines", "Deadlines", "{772AB3E3-505E-4171-BEFA-2D837E3CE412}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
