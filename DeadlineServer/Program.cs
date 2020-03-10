@@ -12,7 +12,7 @@ namespace DeadlineServer
 
             Server server = new Server()
             {
-                Services = { Greet.GreetingService.BindService(new GreetingServiceImpl()) },
+                Services = { Greet.GreetingService.BindService(new GreetingDeadlineServiceImpl()) },
                 Ports = { new ServerPort("localhost", _port, ServerCredentials.Insecure)}
             };
 
