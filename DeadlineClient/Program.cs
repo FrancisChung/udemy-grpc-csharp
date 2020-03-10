@@ -22,7 +22,7 @@ namespace DeadlineClient
             try
             {
                 var response = client.GreetDeadline(new GreetDeadlineRequest() {Name = "John"},
-                    deadline: DateTime.UtcNow.AddMilliseconds(500));
+                    deadline: DateTime.UtcNow.AddMilliseconds(100));    //Set this to 300 or higher
                 Console.WriteLine(response.Result);
             }
             catch (RpcException e) when (e.StatusCode == StatusCode.DeadlineExceeded)
