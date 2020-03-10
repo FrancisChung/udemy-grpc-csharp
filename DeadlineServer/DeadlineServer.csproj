@@ -26,6 +26,8 @@
     <Compile Remove="Models\DummyGrpc.cs" />
     <Compile Remove="Models\Average.cs" />
     <Compile Remove="Models\AverageGrpc.cs" />
+    <Compile Remove="Models\Greeting.cs" />
+    <Compile Remove="Models\GreetingGrpc.cs" />
     <Compile Remove="Models\Sqrt.cs" />
     <Compile Remove="Models\SqrtGrpc.cs" />
     <Compile Remove="Models\Sumapi.cs" />
