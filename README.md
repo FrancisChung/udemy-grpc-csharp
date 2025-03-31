@@ -16,6 +16,7 @@ https://www.udemy.com/course-dashboard-redirect/?course_id=2598384
 
 Note: This course expects you have some preliminary knowledge about Protocol Buffers and C# and .NET . 
 
+![image](https://github.com/user-attachments/assets/116985f8-3c5e-4cf8-860c-bae4053a7e00)
 
 
 Section outline:
