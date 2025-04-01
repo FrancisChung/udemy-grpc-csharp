@@ -342,3 +342,5 @@ healthchecksdb
 /SumAPIServer/Models/Prime.cs
 /ServerStreamServer/Models/PrimeGrpc.cs
 /ServerStreamServer/Models/Prime.cs
+
+Models/
