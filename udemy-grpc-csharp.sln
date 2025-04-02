@@ -1,13 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29509.3
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "proto", "proto", "{6A3E668F-0A61-4FF2-91B5-C46B91EEF791}"
 	ProjectSection(SolutionItems) = preProject
 		average.proto = average.proto
 		dummy.proto = dummy.proto
 		greeting.proto = greeting.proto
+		max.proto = max.proto
 		prime.proto = prime.proto
 		sqrt.proto = sqrt.proto
 		sumapi.proto = sumapi.proto
@@ -74,6 +75,17 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeadlineServer", "DeadlineServer\DeadlineServer.csproj", "{4394BD40-3742-4495-A45C-895B4A83AF9C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeadlineClient", "DeadlineClient\DeadlineClient.csproj", "{E29BBC4D-FEB9-4128-8EAB-C9C41F426E8D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FindMaximum", "FindMaximum", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMaximumClient", "FindMaximumClient\FindMaximumClient.csproj", "{0450E24A-66AC-42D9-BED3-14FBDEF041AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMaximumServer", "FindMaximumServer\FindMaximumServer.csproj", "{77A769F8-42F8-48F4-A64B-3448C186F25B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -153,6 +165,14 @@ Global
 		{E29BBC4D-FEB9-4128-8EAB-C9C41F426E8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E29BBC4D-FEB9-4128-8EAB-C9C41F426E8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E29BBC4D-FEB9-4128-8EAB-C9C41F426E8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0450E24A-66AC-42D9-BED3-14FBDEF041AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0450E24A-66AC-42D9-BED3-14FBDEF041AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0450E24A-66AC-42D9-BED3-14FBDEF041AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0450E24A-66AC-42D9-BED3-14FBDEF041AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77A769F8-42F8-48F4-A64B-3448C186F25B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77A769F8-42F8-48F4-A64B-3448C186F25B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77A769F8-42F8-48F4-A64B-3448C186F25B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77A769F8-42F8-48F4-A64B-3448C186F25B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -183,6 +203,8 @@ Global
 		{E3B7FEA4-D721-4CF9-8BC7-902DDACD1CF5} = {BF4605ED-286E-416B-8B93-2092773160ED}
 		{4394BD40-3742-4495-A45C-895B4A83AF9C} = {772AB3E3-505E-4171-BEFA-2D837E3CE412}
 		{E29BBC4D-FEB9-4128-8EAB-C9C41F426E8D} = {772AB3E3-505E-4171-BEFA-2D837E3CE412}
+		{0450E24A-66AC-42D9-BED3-14FBDEF041AB} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{77A769F8-42F8-48F4-A64B-3448C186F25B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {41D906A8-0DC0-483B-A111-D8EB739B359D}
