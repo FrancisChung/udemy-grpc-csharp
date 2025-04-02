@@ -3,19 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static FindMaximum.FindMaxService;
+using Grpc.Core;
+using Max;
+using static Max.FindMaxService;
 
 namespace FindMaximumServer
 { 
-    internal class FindMaxServiceImpl : FindMaxServiceBase
+    internal class FindMaxServiceImpl : FindMaxService.FindMaxServiceBase
     {
-        private int? max = null;
-        while (await requestStream.MoveNext())
+        public override async Task findMaximum(IAsyncStreamReader<FindMaxRequest> requestStream, IServerStreamWriter<FindMaxResponse> responseStream, ServerCallContext context)
         {
-            if (!max.HasValue ||  max <requestStream.Current.Number>>)
+            int currentMax = 0;
+            while (await requestStream.MoveNext())
             {
-                max = requestStream.Current.Number;
-                await responseStream.WriteAsync(new FindMaxResponse() { Max = max.Value });
+                var number = requestStream.Current.Number;
+                if (number > currentMax)
+                {
+                    currentMax = number;
+                    await responseStream.WriteAsync(new FindMaxResponse() { Max = currentMax });
+                }
             }
         }
     }
