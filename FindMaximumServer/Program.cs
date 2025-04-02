@@ -3,6 +3,7 @@ using System.Threading;
 using System.IO;
 using FindMaximumServer;
 using Grpc.Core;
+using Max;
 
 namespace FindMaximumServer
 {
@@ -17,7 +18,7 @@ namespace FindMaximumServer
             {
                 server = new Grpc.Core.Server()
                 {
-                    Services = { FindMaximumService.BindService(new FindMaximumServiceImpl()) },
+                    Services = { FindMaxService.BindService(new FindMaxServiceImpl())},
                     Ports = { new ServerPort("localhost", _port, ServerCredentials.Insecure) }
                 };
                 server.Start();

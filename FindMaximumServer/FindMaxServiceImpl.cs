@@ -9,7 +9,7 @@ using static Max.FindMaxService;
 
 namespace FindMaximumServer
 { 
-    internal class FindMaxServiceImpl : FindMaxService.FindMaxServiceBase
+    public class FindMaxServiceImpl : FindMaxService.FindMaxServiceBase
     {
         public override async Task findMaximum(IAsyncStreamReader<FindMaxRequest> requestStream, IServerStreamWriter<FindMaxResponse> responseStream, ServerCallContext context)
         {
