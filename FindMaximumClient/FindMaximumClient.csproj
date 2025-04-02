@@ -6,5 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
+	<ItemGroup>
+		<Protobuf Include="../*.proto" OutputDir="%(RelativePath)Models/" />
+	</ItemGroup>
 </Project>
