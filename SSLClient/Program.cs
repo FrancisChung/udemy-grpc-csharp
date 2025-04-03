@@ -13,10 +13,17 @@ namespace Client
     class Program
     {
         private const string Target = "127.0.0.1:50051";
+        private const int Port = 50051;
         static void Main(string[] args)
         {
             Thread.Sleep(2000);
-            Channel channel = new Channel(Target, ChannelCredentials.Insecure);
+
+            var clientCert = File.ReadAllText($"SSL/client.crt");
+            var clientKey = File.ReadAllText($"SSL/client.key");
+            var caCert = File.ReadAllText($"SSL/ca.crt");
+
+            var credentials = new SslCredentials(caCert, new KeyCertificatePair(clientCert, clientKey));
+            Channel channel = new Channel("127.0.0.1", Port, credentials);
 
             channel.ConnectAsync().ContinueWith((task) =>
             {
