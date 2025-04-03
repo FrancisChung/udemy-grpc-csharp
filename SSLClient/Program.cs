@@ -29,6 +29,7 @@ namespace Client
             //var client = new DummyService.DummyServiceClient(channel);
 
             var client = new GreetingService.GreetingServiceClient(channel);
+            Console.WriteLine($"Greeting Service Channel established");
 
             var greeting = new Greeting()
             {
@@ -40,7 +41,7 @@ namespace Client
             {
                 Greeting = greeting
             };
-
+            Console.WriteLine($"Sending Greeting Request: {greeting}");
             var response = client.Greet(request);
             Console.WriteLine($"Response : {response.Result}");
 
