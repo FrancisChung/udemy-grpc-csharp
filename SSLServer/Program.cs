@@ -18,10 +18,16 @@ namespace Server
 
             try
             {
+                var cert = File.ReadAllText($"SSL/server.crt");
+                var key = File.ReadAllText($"SSL/server.key");
+                var caCert = File.ReadAllText($"SSL/ca.crt");
+                var keyPair = new KeyCertificatePair(cert, key);
+                var credentials = new SslServerCredentials(new List<KeyCertificatePair>() {keyPair}, caCert, true);
+
                 server = new Grpc.Core.Server()
                 {
                     Services = { GreetingService.BindService(new GreetingServiceImpl()) },
-                    Ports = { new ServerPort("localhost", Port, ServerCredentials.Insecure) }
+                    Ports = { new ServerPort("127.0.0.1", Port, credentials) }
                 };
                 server.Start();
                 Console.WriteLine(($"The Server is listening on port : {Port}"));
