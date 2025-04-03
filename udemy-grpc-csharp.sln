@@ -79,6 +79,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		ssl.bat = ssl.bat
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FindMaximum", "FindMaximum", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
@@ -86,6 +87,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMaximumClient", "FindMaximumClient\FindMaximumClient.csproj", "{0450E24A-66AC-42D9-BED3-14FBDEF041AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMaximumServer", "FindMaximumServer\FindMaximumServer.csproj", "{77A769F8-42F8-48F4-A64B-3448C186F25B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSL", "SSL", "{E10B14AC-BD10-45C3-A8B7-B551782F0A34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSLClient", "SSLClient\SSLClient.csproj", "{4A86E510-9BD2-46C1-BB97-AB507DB072C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSLServer", "SSLServer\SSLServer.csproj", "{2EBEA6D7-E546-4AD8-BD2D-1FC4C53DBBE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -173,6 +180,14 @@ Global
 		{77A769F8-42F8-48F4-A64B-3448C186F25B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77A769F8-42F8-48F4-A64B-3448C186F25B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77A769F8-42F8-48F4-A64B-3448C186F25B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A86E510-9BD2-46C1-BB97-AB507DB072C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A86E510-9BD2-46C1-BB97-AB507DB072C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A86E510-9BD2-46C1-BB97-AB507DB072C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A86E510-9BD2-46C1-BB97-AB507DB072C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EBEA6D7-E546-4AD8-BD2D-1FC4C53DBBE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EBEA6D7-E546-4AD8-BD2D-1FC4C53DBBE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EBEA6D7-E546-4AD8-BD2D-1FC4C53DBBE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EBEA6D7-E546-4AD8-BD2D-1FC4C53DBBE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -205,6 +220,8 @@ Global
 		{E29BBC4D-FEB9-4128-8EAB-C9C41F426E8D} = {772AB3E3-505E-4171-BEFA-2D837E3CE412}
 		{0450E24A-66AC-42D9-BED3-14FBDEF041AB} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{77A769F8-42F8-48F4-A64B-3448C186F25B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{4A86E510-9BD2-46C1-BB97-AB507DB072C9} = {E10B14AC-BD10-45C3-A8B7-B551782F0A34}
+		{2EBEA6D7-E546-4AD8-BD2D-1FC4C53DBBE8} = {E10B14AC-BD10-45C3-A8B7-B551782F0A34}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {41D906A8-0DC0-483B-A111-D8EB739B359D}
