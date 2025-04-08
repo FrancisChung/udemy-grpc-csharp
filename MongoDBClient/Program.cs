@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Blog;
 using Dummy;
 using Grpc.Core;
 using Greet;
@@ -26,22 +27,21 @@ namespace MongoDBClient
             });
 
             //var client = new DummyService.DummyServiceClient(channel);
+            //var client = new GreetingService.GreetingServiceClient(channel);
 
-            var client = new GreetingService.GreetingServiceClient(channel);
-
-            var greeting = new Greeting()
+            var client = new BlogService.BlogServiceClient(channel);
+            var response = client.CreateBlog(new CreateBlogRequest() 
             {
-                FirstName = "Francis",
-                LastName = "Chung"
-            };
+                Blog = new Blog.Blog()
+                {
+                    AuthorId = "Francis Chung",
+                    Title = "New Blog",
+                    Content = "Hello Blog, this is a new blog entry."
+                    
+                }
+            });
 
-            var request = new GreetingRequest()
-            {
-                Greeting = greeting
-            };
-
-            var response = client.Greet(request);
-            Console.WriteLine($"Response : {response.Result}");
+            Console.WriteLine($"The Blog ${response.Blog.Id} was created! ");
 
             channel.ShutdownAsync().Wait();
             Console.ReadKey();
