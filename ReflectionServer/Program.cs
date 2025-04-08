@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Greet;
 using Grpc.Core;
+using Grpc.Reflection.V1Alpha;
 
 namespace ReflectionServer
 {
@@ -18,9 +19,14 @@ namespace ReflectionServer
 
             try
             {
+                var reflectionService = new Grpc.Reflection.ReflectionServiceImpl(GreetingService.Descriptor, ServerReflection.Descriptor);
                 server = new Grpc.Core.Server()
                 {
-                    Services = { GreetingService.BindService(new GreetingServiceImpl()) },
+                    Services =
+                    {
+                        GreetingService.BindService(new GreetingServiceImpl()),
+                        ServerReflection.BindService(reflectionService)
+                    },
                     Ports = { new ServerPort("localhost", Port, ServerCredentials.Insecure) }
                 };
                 server.Start();
