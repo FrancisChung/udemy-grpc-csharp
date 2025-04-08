@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Greet;
 using Grpc.Core;
 
-namespace Server
+namespace MongoDBServer
 {
     class Program
     {
