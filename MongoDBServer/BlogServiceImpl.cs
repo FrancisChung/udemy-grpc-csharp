@@ -65,5 +65,39 @@ namespace MongoDBServer
 
             return Task.FromResult(response);
         }
+
+
+        public override async Task<UpdateBlogResponse> UpdateBlog(UpdateBlogRequest request, ServerCallContext context)
+        {
+            var blogId = request.Blog.Id;
+            var filter = new FilterDefinitionBuilder<BsonDocument>().Eq("_id", new ObjectId(blogId));
+
+            var result = _mongoCollection.Find(filter).FirstOrDefault();
+
+            if (result == null)
+                throw new RpcException(new Status(StatusCode.NotFound, $"The Blog Id of {blogId} was not found"));
+
+            BsonDocument doc = new BsonDocument("author_id", request.Blog.AuthorId)
+                .Add("title", request.Blog.Title)
+                .Add("content", request.Blog.Content);
+
+            _mongoCollection.ReplaceOne(filter, doc);
+
+            var blog = new Blog.Blog()
+            {
+                AuthorId = doc.GetValue("author_id").AsString,
+                Title = doc.GetValue("title").AsString,
+                Content = doc.GetValue("content").AsString
+            };
+
+            blog.Id = blogId;
+
+            var response = new UpdateBlogResponse()
+            {
+                Blog = blog
+            };
+
+            return response;
+        }
     }
 }
