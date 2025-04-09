@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
@@ -38,6 +39,31 @@ namespace MongoDBServer
 
             return Task.FromResult(response);
 
+        }
+
+        public override Task<ReadBlogResponse> ReadBlog(ReadBlogRequest request, ServerCallContext context)
+        {
+            var blogId = request.BlogId;
+            var filter = new FilterDefinitionBuilder<BsonDocument>().Eq("_id", new ObjectId(blogId));
+
+            var result = _mongoCollection.Find(filter).FirstOrDefault();
+
+            if (result == null)
+                throw new RpcException(new Status(StatusCode.NotFound, $"The Blog Id of {blogId} was not found"));
+
+            Blog.Blog blog = new Blog.Blog()
+            {
+                AuthorId = result.GetValue("author_id").AsString,
+                Title = result.GetValue("title").AsString,
+                Content = result.GetValue("content").AsString
+            };
+
+            var response = new ReadBlogResponse()
+            {
+                Blog = blog
+            };
+
+            return Task.FromResult(response);
         }
     }
 }
