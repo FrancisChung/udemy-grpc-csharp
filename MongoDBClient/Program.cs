@@ -26,16 +26,31 @@ namespace MongoDBClient
                     Console.WriteLine($"Client Task Status: {task.ToString()}");
             });
 
-            //var client = new DummyService.DummyServiceClient(channel);
-            //var client = new GreetingService.GreetingServiceClient(channel);
-
             var client = new BlogService.BlogServiceClient(channel);
-            //var response = CreateTestBlog(client);
 
-            Console.WriteLine($"The Blog ${response.Blog.Id} was created! ");
+            ReadBlog(client);
+
+            //var response = CreateTestBlog(client);
+            // Console.WriteLine($"The Blog ${response.Blog.Id} was created! ");
 
             channel.ShutdownAsync().Wait();
             Console.ReadKey();
+        }
+
+        private static void ReadBlog(BlogService.BlogServiceClient client)
+        {
+            try
+            {
+                var response = client.ReadBlog(new ReadBlogRequest()
+                {
+                    BlogId = "67f59c9d3c574a85bbae39e4"
+                });
+                Console.WriteLine(response.Blog.ToString());
+            }
+            catch (RpcException ex)
+            {
+                Console.WriteLine(ex.Status.Detail);
+            }
         }
 
         private static CreateBlogResponse CreateTestBlog(BlogService.BlogServiceClient client)
