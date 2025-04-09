@@ -30,6 +30,16 @@ namespace MongoDBClient
             //var client = new GreetingService.GreetingServiceClient(channel);
 
             var client = new BlogService.BlogServiceClient(channel);
+            //var response = CreateTestBlog(client);
+
+            Console.WriteLine($"The Blog ${response.Blog.Id} was created! ");
+
+            channel.ShutdownAsync().Wait();
+            Console.ReadKey();
+        }
+
+        private static CreateBlogResponse CreateTestBlog(BlogService.BlogServiceClient client)
+        {
             var response = client.CreateBlog(new CreateBlogRequest() 
             {
                 Blog = new Blog.Blog()
@@ -40,11 +50,7 @@ namespace MongoDBClient
                     
                 }
             });
-
-            Console.WriteLine($"The Blog ${response.Blog.Id} was created! ");
-
-            channel.ShutdownAsync().Wait();
-            Console.ReadKey();
+            return response;
         }
     }
 }
