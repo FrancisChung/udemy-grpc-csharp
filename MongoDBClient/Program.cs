@@ -28,18 +28,18 @@ namespace MongoDBClient
             });
 
             var client = new BlogService.BlogServiceClient(channel);
-            //ListBlog(client);
+            ListBlog(client);
 
             //ReadBlog(client);
 
-            var blog = CreateTestBlog(client, 1);
-            CreateTestBlog(client, 2);
-            CreateTestBlog(client, 3);
-            CreateTestBlog(client, 4);
-            CreateTestBlog(client, 5);
-            CreateTestBlog(client, 6);
-            CreateTestBlog(client, 7);
-            CreateTestBlog(client, 8);
+            //var blog = CreateTestBlog(client, 1);
+            //CreateTestBlog(client, 2);
+            //CreateTestBlog(client, 3);
+            //CreateTestBlog(client, 4);
+            //CreateTestBlog(client, 5);
+            //CreateTestBlog(client, 6);
+            //CreateTestBlog(client, 7);
+            //CreateTestBlog(client, 8);
 
             //DeleteBlog(client, blog);
 
