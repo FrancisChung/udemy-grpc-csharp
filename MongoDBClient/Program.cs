@@ -32,7 +32,9 @@ namespace MongoDBClient
             //ReadBlog(client);
 
             var blog = CreateTestBlog(client);
-            UpdateBlog(client, blog);
+            DeleteBlog(client, blog);
+
+            //UpdateBlog(client, blog);
             // Console.WriteLine($"The Blog ${response.Blog.Id} was created! ");
 
             channel.ShutdownAsync().Wait();
@@ -83,6 +85,23 @@ namespace MongoDBClient
                 });
 
                 Console.Write(response.Blog.ToString());
+            }
+            catch (RpcException ex)
+            {
+                Console.WriteLine(ex.Status.Detail);
+            }
+        }
+
+        private static void DeleteBlog(BlogService.BlogServiceClient client, Blog.Blog blog)
+        {
+            try
+            {
+                var blogId = blog.Id;
+                var response = client.DeleteBlog(new DeleteBlogRequest()
+                {
+                    BlogId = blogId
+                });
+                Console.WriteLine($"The Blog with ID {blogId} was deleted.");
             }
             catch (RpcException ex)
             {
