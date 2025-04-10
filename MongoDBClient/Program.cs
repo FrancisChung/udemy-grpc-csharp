@@ -13,6 +13,7 @@ namespace MongoDBClient
     class Program
     {
         private const string Target = "127.0.0.1:50051";
+
         static void Main(string[] args)
         {
             Thread.Sleep(2000);
@@ -56,18 +57,18 @@ namespace MongoDBClient
 
         private static Blog.Blog CreateTestBlog(BlogService.BlogServiceClient client)
         {
-            var response = client.CreateBlog(new CreateBlogRequest() 
+            var response = client.CreateBlog(new CreateBlogRequest()
             {
                 Blog = new Blog.Blog()
                 {
                     AuthorId = "Francis Chung",
                     Title = "New Blog",
                     Content = "Hello Blog, this is a new blog entry."
-                    
+
                 }
             });
             return response.Blog;
-        } 
+        }
 
         private static void UpdateBlog(BlogService.BlogServiceClient client, Blog.Blog blog)
         {
@@ -88,4 +89,5 @@ namespace MongoDBClient
                 Console.WriteLine(ex.Status.Detail);
             }
         }
+    }
 }
