@@ -28,11 +28,12 @@ namespace MongoDBClient
             });
 
             var client = new BlogService.BlogServiceClient(channel);
+            ListBlog(client);
 
             //ReadBlog(client);
 
-            var blog = CreateTestBlog(client);
-            DeleteBlog(client, blog);
+            //var blog = CreateTestBlog(client);
+            //DeleteBlog(client, blog);
 
             //UpdateBlog(client, blog);
             // Console.WriteLine($"The Blog ${response.Blog.Id} was created! ");
@@ -106,6 +107,16 @@ namespace MongoDBClient
             catch (RpcException ex)
             {
                 Console.WriteLine(ex.Status.Detail);
+            }
+        }
+
+        private static async Task ListBlog(BlogService.BlogServiceClient client)
+        {
+            var response = client.ListBlog(new ListBlogRequest() { });
+            while (await response.ResponseStream.MoveNext())
+            {
+                var blog = response.ResponseStream.Current.Blog;
+                Console.WriteLine($"Blog: {blog.ToString()} ");
             }
         }
     }
