@@ -28,9 +28,10 @@ namespace MongoDBClient
 
             var client = new BlogService.BlogServiceClient(channel);
 
-            ReadBlog(client);
+            //ReadBlog(client);
 
-            //var response = CreateTestBlog(client);
+            var blog = CreateTestBlog(client);
+            UpdateBlog(client, blog);
             // Console.WriteLine($"The Blog ${response.Blog.Id} was created! ");
 
             channel.ShutdownAsync().Wait();
@@ -53,7 +54,7 @@ namespace MongoDBClient
             }
         }
 
-        private static CreateBlogResponse CreateTestBlog(BlogService.BlogServiceClient client)
+        private static Blog.Blog CreateTestBlog(BlogService.BlogServiceClient client)
         {
             var response = client.CreateBlog(new CreateBlogRequest() 
             {
@@ -65,7 +66,26 @@ namespace MongoDBClient
                     
                 }
             });
-            return response;
+            return response.Blog;
+        } 
+
+        private static void UpdateBlog(BlogService.BlogServiceClient client, Blog.Blog blog)
+        {
+            try
+            {
+                blog.Title = "Udemy Update Test";
+                blog.Content = "This is the updated content of the blog.";
+
+                var response = client.UpdateBlog(new UpdateBlogRequest()
+                {
+                    Blog = blog
+                });
+
+                Console.Write(response.Blog.ToString());
+            }
+            catch (RpcException ex)
+            {
+                Console.WriteLine(ex.Status.Detail);
+            }
         }
-    }
 }
