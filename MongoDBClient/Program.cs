@@ -121,11 +121,14 @@ namespace MongoDBClient
         private static async Task ListBlog(BlogService.BlogServiceClient client)
         {
             var response = client.ListBlog(new ListBlogRequest() { });
-            while (await response.ResponseStream.MoveNext())
+            while (response.ResponseStream.MoveNext().Result)
             {
-                var blog = response.ResponseStream.Current.Blog;
-                Console.WriteLine($"Blog: {blog.ToString()} ");
+                //var blog = response.ResponseStream.Current.Blog;
+                //Console.WriteLine($"Blog: {blog.ToString()} ");
+
+                Console.WriteLine($"{response.ResponseStream.Current.Blog.ToString()}");
             }
+            Console.WriteLine($"Reached End of stream for ListBlog");
         }
     }
 }
