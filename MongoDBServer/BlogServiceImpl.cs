@@ -118,8 +118,10 @@ namespace MongoDBServer
         {
             var filter = new FilterDefinitionBuilder<BsonDocument>().Empty;
             var result = _mongoCollection.Find(filter);
+            var list = result.ToList();
 
-            foreach (var item in result.ToList())
+            Console.WriteLine($"{list.Count} entries found in DB");
+            foreach (var item in list )
             {
                 await responseStream.WriteAsync(new ListBlogResponse()
                 {
@@ -131,6 +133,7 @@ namespace MongoDBServer
                         Content = item.GetValue("content").AsString
                     }
                 });
+                Console.WriteLine($"Blog Id: {item.GetValue("_id").ToString()} written to stream");
             }
         }
     }
