@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using Amazon.Util.Internal;
 using Blog;
 using Grpc.Core;
 using static Blog.BlogService;
@@ -14,9 +15,9 @@ using MongoDB.Driver.Core;
 
 namespace MongoDBServer
 {
-    public class BlogServiceImpl : BlogServiceBase 
+    public class BlogServiceImpl : BlogServiceBase
     {
-        private static MongoClient  _mongoClient = new MongoClient("mongodb://localhost:27017");
+        private static MongoClient _mongoClient = new MongoClient("mongodb://localhost:27017");
         private static IMongoDatabase _mongoDB = _mongoClient.GetDatabase("myBlogDB");
         private static IMongoCollection<BsonDocument> _mongoCollection = _mongoDB.GetCollection<BsonDocument>("Blog");
 
@@ -26,9 +27,9 @@ namespace MongoDBServer
             BsonDocument doc = new BsonDocument("author_id", blog.AuthorId)
                 .Add("title", blog.Title)
                 .Add("content", blog.Content);
-                
+
             _mongoCollection.InsertOne(doc);
-            
+
             string id = doc.GetValue("_id").ToString();
             blog.Id = id;
 
@@ -98,6 +99,19 @@ namespace MongoDBServer
             };
 
             return response;
+        }
+
+        public override async Task<DeleteBlogResponse> DeleteBlog(DeleteBlogRequest request, ServerCallContext context)
+        {
+            var blogId = request.BlogId;
+            var filter = new FilterDefinitionBuilder<BsonDocument>().Eq("_id", new ObjectId(blogId));
+
+            var result = await _mongoCollection.DeleteOneAsync(filter);
+
+            if (result.DeletedCount == 0)
+                throw new RpcException(new Status(StatusCode.NotFound, $"The Blog Id of {blogId} was not found"));
+
+            return new DeleteBlogResponse() { BlogId = blogId };
         }
     }
 }
