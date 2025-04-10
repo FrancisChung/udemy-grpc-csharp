@@ -113,5 +113,27 @@ namespace MongoDBServer
 
             return new DeleteBlogResponse() { BlogId = blogId };
         }
+
+        public override async Task<ListBlogResponse> ListBlog(ListBlogRequest request, ServerCallContext context)
+        {
+            var filter = new FilterDefinitionBuilder<BsonDocument>().Empty;
+            var result =  _mongoCollection.Find(filter)
+
+            foreach (var item in result.ToList())
+            {
+                await responseStream  .WriteAsync(new ListBlogResponse()
+                {
+                    Blog = new Blog.Blog()
+                    {
+                        Id = item.GetValue("_id").ToString(),
+                        AuthorId = item.GetValue("author_id").AsString,
+                        Title = item.GetValue("title").AsString,
+                        Content = item.GetValue("content").AsString
+                    }
+                });
+            }
+
+            return null;
+        }
     }
 }
