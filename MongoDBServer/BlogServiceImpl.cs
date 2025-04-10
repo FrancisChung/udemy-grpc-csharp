@@ -114,14 +114,14 @@ namespace MongoDBServer
             return new DeleteBlogResponse() { BlogId = blogId };
         }
 
-        public override async Task<ListBlogResponse> ListBlog(ListBlogRequest request, ServerCallContext context)
+        public override async Task ListBlog(ListBlogRequest request, IServerStreamWriter<ListBlogResponse> responseStream, ServerCallContext context)
         {
             var filter = new FilterDefinitionBuilder<BsonDocument>().Empty;
-            var result =  _mongoCollection.Find(filter)
+            var result = _mongoCollection.Find(filter);
 
             foreach (var item in result.ToList())
             {
-                await responseStream  .WriteAsync(new ListBlogResponse()
+                await responseStream.WriteAsync(new ListBlogResponse()
                 {
                     Blog = new Blog.Blog()
                     {
@@ -132,8 +132,6 @@ namespace MongoDBServer
                     }
                 });
             }
-
-            return null;
         }
     }
 }
